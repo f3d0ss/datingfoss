@@ -1,0 +1,31 @@
+pre-commit:
+  commands:
+    lint_code:
+      glob: "*.dart"
+      run: dart fix --apply && git add {staged_files}
+    format_code:
+      glob: "*.dart"
+      run: flutter format {staged_files} && git add {staged_files}
+
+commit-msg:
+  commands:
+    validate:
+      run: flutter pub run ./git_hooks/commit_message.dart
+
+pre-push:
+  parallel: true
+  commands:
+    static_code_analysis:
+      run: flutter analyze
+    core-tests:
+      run: flutter test
+    controllers-tests:
+      run: cd packages/controllers ; flutter test
+    repositories-tests:
+      run: cd packages/repositories ; flutter test
+    models-tests:
+      run: cd packages/models ; flutter test
+    communication-handler-tests:
+      run: cd packages/communication_handler ; flutter test
+    service-tests:
+      run: flutter test packages/services

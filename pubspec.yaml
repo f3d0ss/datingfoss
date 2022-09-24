@@ -1,0 +1,73 @@
+name: datingfoss
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  bloc: ^8.0.3
+  bloc_concurrency: ^0.2.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  carousel_slider: ^4.1.1
+  cupertino_icons: ^1.0.2
+  equatable: ^2.0.5
+  flow_builder: ^0.0.8
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  flutter_map: ^0.14.0
+  flutter_services_binding: ^0.1.0
+  form_inputs:
+    path: packages/form_inputs
+  formz: ^0.4.1
+  geolocator: ^8.0.0
+  get_it: ^7.2.0
+  http: ^0.13.4
+  hydrated_bloc: ^9.0.0-dev.3
+  image_picker: ^0.8.4+4
+  latlong2: ^0.8.1
+  models:
+    path: packages/models
+  path: ^1.8.1
+  path_provider: ^2.0.10
+  pointycastle: ^3.4.0
+  repositories:
+    path: packages/repositories
+  rxdart: ^0.27.2
+  synchronized: ^3.0.0+2
+  sqflite: ^2.0.0+4
+  tcard:
+    git:
+      url: https://github.com/f-cazzola/tcard.git
+      ref: fixing
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  build_runner: ^2.1.10
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  mocktail: ^0.2.0
+  mock_generator:
+    path: packages/mock_generator
+  very_good_analysis: ^3.0.0
+  mockingjay: ^0.2.0
+
+# The following section is specific to Flutter.
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/spinner.gif
+    - assets/images/noImageBackground.png
+    - assets/images/logo.png
+    - assets/mock/ # just for mock
